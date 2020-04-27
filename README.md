@@ -33,7 +33,7 @@
 # Como rodar:
 <p>Supomos que ja tenha o python3 ou superior, neste script usei o python3.7, apenas digite o comando <code>python3 manicomio.py</code> e o bot irá antes ler todos os corpus, após isto um endereço será fornecido, este é o endereço de seu bot rodando, caso queira alterar o endereço, na ultima linha identifique o IP e Porta que deseja rodar, por padrao este script roda no endereço http://127.0.0.1:5000</p>
 <code>python3 manicomio.py</code>
-
+<img src="https://github.com/gorpo/Manicomio-Chatterbot-Python/blob/master/static/run.gif" width="100%"></img>
 # Correção de problemas:
 <p>A Bibioteca YAML foi atualizada mas o chatterbot não!!! Possivelmente você verá este erro:<br>
 <code>C:\Users\user\AppData\Local\Programs\Python\Python37\lib\site-packages\chatterbot\corpus.py:38: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
