@@ -1,0 +1,113 @@
+ <!-- #===================================================================================
+#      ███╗   ███╗ █████╗ ███╗   ██╗██╗ ██████╗ ██████╗ ███╗   ███╗██╗ ██████╗     #
+#      ████╗ ████║██╔══██╗████╗  ██║██║██╔════╝██╔═══██╗████╗ ████║██║██╔═══██╗    #
+#      ██╔████╔██║███████║██╔██╗ ██║██║██║     ██║   ██║██╔████╔██║██║██║   ██║    #
+#      ██║╚██╔╝██║██╔══██║██║╚██╗██║██║██║     ██║   ██║██║╚██╔╝██║██║██║   ██║    #
+#      ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║╚██████╗╚██████╔╝██║ ╚═╝ ██║██║╚██████╔╝    #
+#      ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝ ╚═════╝     #
+#       ╔╦╗╔═╗═╗ ╦╔═╗  ╔═╗╦═╗╔═╗ ╦╔═╗╔═╗╔╦╗  ╦ ╦╔═╗╔═╗╦╔═╔═╗╦═╗  ╔╦╗╔═╗╔═╗╔╦╗      #
+#        ║ ║  ╔╩╦╝╚═╗  ╠═╝╠╦╝║ ║ ║║╣ ║   ║   ╠═╣╠═╣║  ╠╩╗║╣ ╠╦╝   ║ ║╣ ╠═╣║║║      #
+#        ╩ ╚═╝╩ ╚═╚═╝  ╩  ╩╚═╚═╝╚╝╚═╝╚═╝ ╩   ╩ ╩╩ ╩╚═╝╩ ╩╚═╝╩╚═   ╩ ╚═╝╩ ╩╩ ╩      #
+#===================================================================================
+#[+] GORPO ORKO DEV  | Telegram: @GorpoOrko  | Github:https://github.com/gorpo  [+]
+#=================================================================================== -->  
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="static/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="shortcut icon" type="image/png" href="static/icon.png"/>
+<!-- TITULO DA ABA ANIMADO -->
+        <script type="text/javascript">
+var rev = "fwd";
+function titlebar(val)
+{
+    var msg  = "MANICOMIO | CHATTERBOT PYTHON";
+    var res = " ";
+    var speed = 50
+    var pos = val;
+
+    msg = "|"+msg+" |";
+    var le = msg.length;
+    if(rev == "fwd"){
+        if(pos < le){
+        pos = pos+1;
+        scroll = msg.substr(0,pos);
+        document.title = scroll;
+        timer = window.setTimeout("titlebar("+pos+")",speed);
+        }
+        else{
+        rev = "bwd";
+        timer = window.setTimeout("titlebar("+pos+")",speed);
+        }
+    }
+    else{
+        if(pos > 0){
+        pos = pos-1;
+        var ale = le-pos;
+        scrol = msg.substr(ale,le);
+        document.title = scrol;
+        timer = window.setTimeout("titlebar("+pos+")",speed);
+        }
+        else{
+        rev = "fwd";
+        timer = window.setTimeout("titlebar("+pos+")",speed);
+        }   
+    }
+}
+
+titlebar(0);
+</script>
+
+    </head>
+    <body >
+
+        <div class=texto_centro>MANICOMIO CHATTERBOT PYTHON</div>
+
+<div class="chat_canto" > 
+    <div class="container">
+        <div class="row">
+             <div id="chatbox" class="border border-success">
+             <p class="botText"></p>
+            </div>
+                <div id="userInput">
+                <input id="textInput" class="mensagem" type="text" name="msg" placeholder="Sua mensagem:">
+                <input id="buttonInput" class="botao" type="submit" value="Enviar">
+            </div>
+         </div>
+     </div>
+</div>
+<!-- CODIGO PASSADO PARA O PYTHON -->
+<script>
+        function getResponse() {
+            let userText = $("#textInput").val();
+            let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            $.get("/get", { msg: userText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+    });
+    }
+        $("#textInput").keypress(function(e) {
+        //if enter key is pressed
+            if(e.which == 13) {
+                getResponse();
+            }
+        });
+        $("#buttonInput").click(function() {
+            getResponse();
+        });
+</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </div>
+    </body>
+    </html>

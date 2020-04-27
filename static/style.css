@@ -1,0 +1,106 @@
+body{
+    background-color: #000000 ;
+    background-image: url('bg.jpg');
+    
+}
+
+:root {
+  scrollbar-color: rgb(24,24,24) rgb(0,0,0) !important;
+  scrollbar-width: thin !important;
+}
+
+
+@font-face {
+    font-family: 'blood_crowregular';
+    src: url('bloodcrow-webfont.woff2') format('woff2'),
+         url('bloodcrow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+.chat_canto {
+   position: absolute;
+   padding-top: 30%
+   padding-bottom: 30%;
+   right: -2%;
+   top: 92%;
+   width: 300px;
+   height: 300px;
+   overflow:auto; 
+   z-index: 0;
+   
+}
+
+.botao {
+    background-color: #7e0606;
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.mensagem {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 6px 30px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+
+    #textInput {
+        border: none;
+        border-bottom: 3px solid #7e0606;
+    }
+    .userText {
+        color: white;
+        font-family: monospace;
+        font-size: 17px;
+        text-align: right;
+        line-height: 30px;
+    }
+    .userText span {
+        background-color: #7e0606;
+        padding: 10px;
+        border-radius: 2px;
+    }
+    .botText {
+        color: white;
+        font-family: monospace;
+        font-size: 17px;
+        text-align: left;
+        line-height: 30px;
+    }
+    .botText span {
+        background-color: #282828;
+        padding: 10px;
+        border-radius: 2px;
+
+    }
+
+
+   .texto_centro{
+    text-align: center;
+    margin-top: 20%;
+    color: #650404;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-family: 'blood_crowregular';
+    font-size: 60px;
+   }
+
+   #container {
+  width: 500px;
+  margin: auto;
+}
+
+
+
+
